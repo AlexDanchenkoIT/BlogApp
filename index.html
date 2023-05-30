@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blogApp</title>
+
+    <link rel="icon" type="image/png" href="icon.png" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body class="body">
+    <div class="wraper">
+      <h1 class="title">Blog App</h1>
+      <div class="row">
+        <div class="col">
+          <h2 class="new-post">Новый пост</h2>
+          <input
+            class="js-post-title-input post-title-input"
+            type="text"
+            placeholder="Заголовок поста"
+          />
+          <div class="wrapper-counter-title">
+            <p class="js-not-set-title not-set-title not-set-post">
+              Введите заголовок
+            </p>
+            <p class="js-limit-exhausted-title">
+              <span class="js-counter-input">0</span>/100
+            </p>
+          </div>
+          <div class="textarea">
+            <textarea
+              class="js-post-text-input post-text-input"
+              name="text"
+              cols="30"
+              rows="10"
+              placeholder="Опистание поста"
+            ></textarea>
+          </div>
+          <div class="wrapper-counter-textarea">
+            <p class="js-not-set-text set-text not-set-text">Введите текст</p>
+            <p class="js-limit-exhausted-textarea">
+              <span class="js-counter-textarea">0</span>/200
+            </p>
+          </div>
+          <button class="js-new-post-btn new-post-btn">опубликовать</button>
+        </div>
+        <div class="col">
+          <h2 class="news-feed">Лента</h2>
+          <div class="js-posts posts">Лента пуста...</div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
