@@ -125,8 +125,10 @@ const onInputTextarea = (evt) => {
 
     if (length > maxLengthText) {
         limitExhaustedTextarea.classList.add('limit-exhausted');
+        
     } else {
         limitExhaustedTextarea.classList.remove('limit-exhausted');
+        
     }
     
 }
@@ -147,19 +149,22 @@ function validation() {
     const titleLegth = postTitleInputNode.value.length;
     const textLegth = postTextInputNode.value.length;
 
-    if (textLegth > maxLengthTitle) {
+    if (textLegth > maxLengthText) {
         validationMessage.innerText = validationTextMsg;
         validationMessage.classList.remove('validation-msg_hidden');
+        newPostBtnNode.setAttribute('disabled', true)
         return;
     }
 
     if (titleLegth > maxLengthTitle) {
         validationMessage.innerText = validationTitleMsg;
         validationMessage.classList.remove('validation-msg_hidden');
+        newPostBtnNode.setAttribute('disabled', true)
         return;
     }
 
     validationMessage.classList.add('validation-msg_hidden');
+    newPostBtnNode.removeAttribute('disabled')
 
 }
 
