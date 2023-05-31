@@ -1,5 +1,5 @@
 .wraper {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
 }
 
@@ -91,7 +91,7 @@
 }
 
 .posts {
-  height: 350px;
+  height: 400px;
   overflow-y: auto;
   border: 1px solid brown;
   border-radius: 5px;
@@ -101,7 +101,7 @@
 .post {
   padding-bottom: 5px;
   margin-bottom: 20px;
-  border-bottom: 2px solid brown;
+  border-bottom: 1px solid brown;
 }
 
 .post__data {
@@ -111,9 +111,19 @@
 
 .post__title {
   word-wrap: break-word;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  font-size: 24px;
 }
 
 .post__text {
   word-wrap: break-word;
+}
+
+.validation {
+  color: red;
+  margin-top: 15px;
+}
+
+.validation-msg_hidden {
+  display: none;
 }
