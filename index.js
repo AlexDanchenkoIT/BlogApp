@@ -15,13 +15,6 @@ const limitExhaustedTitle = document.querySelector('.js-limit-exhausted-title');
 const limitExhaustedTextarea = document.querySelector('.js-limit-exhausted-textarea');
 const validationMessage = document.querySelector('.js-validation');
 
-const dataPost = new Date();
-const postDay = format(dataPost.getDate());
-const postMonth = format(dataPost.getMonth() + 1);
-const postYear = dataPost.getFullYear();
-const postHours = format(dataPost.getHours());
-const postMinutes = format(dataPost.getMinutes());
-
 const titleNotSet = 'Отсутствует заголовок поста';
 const textNotSet = 'Отсутствует тескт поста';
 const validationTitleMsg = 'ТОВАРИЩ!!! Заголовок не должен превышать 100 символов';
@@ -64,8 +57,10 @@ newPostBtnNode.addEventListener('click', function(){
 const getPostFromUser = () => {
     const title = postTitleInputNode.value;
     const text = postTextInputNode.value;
+    const dataPost = new Date();
 
     return {
+        dataPost,
         title,
         text,
     };
@@ -86,20 +81,19 @@ function format(n) {
     return n;
 }
 
-function getDataPost() {
-    let dataPost = `${postDay}.${postMonth}.${postYear} ${postHours}:${postMinutes}`
-    return dataPost
-}
-
 const renderPost = () => {
     const posts = getPosts();
-    const dataPost = getDataPost();
     let postsHTML = ``
 
     posts.forEach(post => {
         postsHTML += `
         <div class='post'>
-            <p class='post__data'>${dataPost}</p>
+            <p class='post__data'>${format(post.dataPost.getDate())}.
+            ${format(post.dataPost.getMonth() + 1)}.
+            ${post.dataPost.getFullYear()} 
+            ${format(post.dataPost.getHours())}:
+            ${format(post.dataPost.getMinutes())}
+            </p>
             <p class='post__title'>${post.title}</p>
             <p class='post__text'>${post.text}</p>
         </div>`
