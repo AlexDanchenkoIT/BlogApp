@@ -72,6 +72,10 @@
   background-color: #fff;
 }
 
+.new-post-btn:disabled {
+  opacity: 0.5;
+}
+
 .not-set-title {
   color: brown;
 }

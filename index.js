@@ -88,11 +88,7 @@ const renderPost = () => {
     posts.forEach(post => {
         postsHTML += `
         <div class='post'>
-            <p class='post__data'>${format(post.dataPost.getDate())}.
-            ${format(post.dataPost.getMonth() + 1)}.
-            ${post.dataPost.getFullYear()} 
-            ${format(post.dataPost.getHours())}:
-            ${format(post.dataPost.getMinutes())}
+            <p class='post__data'>${format(post.dataPost.getDate())}.${format(post.dataPost.getMonth() + 1)}.${post.dataPost.getFullYear()} ${format(post.dataPost.getHours())}:${format(post.dataPost.getMinutes())}
             </p>
             <p class='post__title'>${post.title}</p>
             <p class='post__text'>${post.text}</p>
